@@ -14,6 +14,7 @@
     "task": "bin/task.js"
   },
   "scripts": {
+    "task": "node ./test/sandbox/tasksfile.js",
     "lint": "tslint -c tslint.json 'src/*.ts' 'test/**/*.ts'",
     "build": "tsc",
     "test": "yarn lint && yarn build && yarn clean:sandbox && jest --coverage",
@@ -35,18 +36,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pawelgalazka/tasksfile.git"
+    "url": "git+https://github.com/GeorgesTech/tasksfile.git"
   },
   "author": "Pawel Galazka",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pawelgalazka/tasksfile/issues"
+    "url": "https://github.com/GeorgesTech/tasksfile/issues"
   },
-  "homepage": "https://github.com/pawelgalazka/tasksfile#readme",
+  "homepage": "https://github.com/GeorgesTech/tasksfile#readme",
   "dependencies": {
     "@pawelgalazka/cli": "2.0.3",
     "@pawelgalazka/shell": "2.0.0",
-    "chalk": "2.3.0"
+    "chalk": "2.3.0",
+    "omelette": "0.4.17"
   },
   "devDependencies": {
     "@babel/core": "7.2.2",
