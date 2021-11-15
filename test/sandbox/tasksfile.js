@@ -1,4 +1,4 @@
-const { sh, help, cli } = require('../../lib')
+const { sh, help } = require('../../lib')
 
 help(echo, 'Simple echo task')
 
@@ -60,8 +60,7 @@ function color() {
   sh('node ./scripts/color.js', { async: true })
 }
 
-
-cli({
+module.exports = {
   echo,
   shell,
   nested,
@@ -70,4 +69,4 @@ cli({
   errorAsyncAwait,
   error,
   color
-})
+}
