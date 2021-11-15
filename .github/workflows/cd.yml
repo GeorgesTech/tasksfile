@@ -37,6 +37,6 @@ jobs:
       - name: test e2e
         run: npm run test:e2e
 
-      - run: npm publish
+      - run: npm publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.WRITE_NPM_PACKAGE_CI_TOKEN }}
