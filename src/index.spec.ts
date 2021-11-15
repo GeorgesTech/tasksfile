@@ -38,12 +38,10 @@ describe('sh()', () => {
     sh('test command', undefined, logger)
     expect(shellMock).toHaveBeenCalledTimes(1)
     expect(shellMock).toHaveBeenCalledWith(expect.anything(), {
-      async: false,
       env: {
         DEFAULT_ENV: 'default env',
         PATH: expect.anything()
-      },
-      nopipe: true
+      }
     })
   })
 
@@ -51,10 +49,8 @@ describe('sh()', () => {
     sh(
       'test command',
       {
-        async: false,
         cwd: 'cwd-dir',
         env: { CUSTOM_ENV: 'custom env' },
-        nopipe: true,
         stdio: 'pipe',
         timeout: 1000
       },
@@ -62,13 +58,11 @@ describe('sh()', () => {
     )
     expect(shellMock).toHaveBeenCalledTimes(1)
     expect(shellMock).toHaveBeenCalledWith(expect.anything(), {
-      async: false,
       cwd: 'cwd-dir',
       env: {
         CUSTOM_ENV: 'custom env',
         PATH: expect.anything()
       },
-      nopipe: true,
       stdio: 'pipe',
       timeout: 1000
     })

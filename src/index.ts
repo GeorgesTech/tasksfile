@@ -85,13 +85,8 @@ export function sh(
   }
 
   logger.log(chalk.bold(command))
-  process.stdout.write('\n') // give me some space
 
-  return shell(command, {
-    ...nextOptions,
-    async: false,
-    nopipe: true
-  })
+  return shell(command, nextOptions)
 }
 
 export function cli(definition: CommandsModule) {

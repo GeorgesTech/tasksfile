@@ -14,7 +14,6 @@
     "task": "bin/task.js"
   },
   "scripts": {
-    "task": "node ./test/sandbox/tasksfile.js",
     "lint": "tslint -c tslint.json 'src/*.ts' 'test/**/*.ts'",
     "build": "tsc",
     "test": "yarn lint && yarn build && yarn clean:sandbox && jest --coverage",
