@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches-ignore:
+      - master
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    if: ${{ github.actor != 'dependabot[bot]' }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: install deps
+        run: npm install
+
+      - name: lint src
+        run: npm run lint
+
+      - name: build src
+        run: npm run build || true
+
+      - name: test unit
+        run: npm run test:unit
+
+      - name: clean sandbox
+        run: npm run clean:sandbox
+
+      - name: test e2e
+        run: npm run test:e2e
