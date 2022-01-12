@@ -1,12 +1,8 @@
 name: CD
 
 on:
-  push:
-    tags-ignore:
-      - "**"
-    branches:
-      - master
-
+  workflow_dispatch:
+    
 jobs:
   cd:
     runs-on: ubuntu-latest

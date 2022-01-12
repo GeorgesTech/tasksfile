@@ -23,7 +23,11 @@
     "clean": "rm -rf node_modules && yarn clean:build && yarn clean:sandbox",
     "clean:build": "rm -rf ./lib",
     "clean:sandbox": "rm -rf ./test/e2e/sandbox/node_modules && mkdir -p ./test/sandbox/node_modules/.bin",
-    "sandbox:task": "cd ./test/sandbox && ../../bin/task.js"
+    "sandbox:task": "cd ./test/sandbox && ../../bin/task.js",
+    "version:patch": "npm version patch -m ':bookmark: Release %s'",
+    "version:minor": "npm version minor -m ':bookmark: Release %s'",
+    "version:major": "npm version major -m ':bookmark: Release %s'",
+    "postversion": "git push --follow-tags"
   },
   "lint-staged": {
     "src/*.{ts,tsx}": [
