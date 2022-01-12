@@ -1,6 +1,6 @@
 {
   "name": "@georges-tech/tasksfile",
-  "version": "5.2.0",
+  "version": "5.3.0",
   "description": "Minimalistic task runner for node.js",
   "private": false,
   "keywords": [
